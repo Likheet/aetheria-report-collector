@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: aetheria-app
+    runtime: python3
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: CUSTOMER_TABLE
+        value: customer
+      - key: CUSTOMER_PHONE_COL
+        value: phone_e164
+      - key: CUSTOMER_NAME_COL
+        value: full_name
+      - key: DEFAULT_COUNTRY_CODE
+        value: "91"
