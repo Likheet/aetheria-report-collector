@@ -80,7 +80,7 @@ pyparsing==3.2.5
 python-dateutil==2.9.0.post0
 python-dotenv==1.1.1
 python-json-logger==3.3.0
-pywin32==311
+pywin32==311; sys_platform == 'win32'
 pywinpty==3.0.0
 PyYAML==6.0.2
 pyzmq==27.1.0
